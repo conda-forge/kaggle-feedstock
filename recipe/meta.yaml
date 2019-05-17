@@ -10,7 +10,7 @@ source:
   sha256: 2b8d6bf84172a3d7c056ef9987daf49dba9a051dfa93a14d31ac5d61307cf009
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - kaggle = kaggle.cli:main
   script: "{{ PYTHON }} -m pip install . -vv"
@@ -31,8 +31,8 @@ requirements:
 
 test:
   commands:
-    - export KAGGLE_USERNAME=datadinosaur  # [not win]
-    - export KAGGLE_KEY=xxxxxxxxxxxxxx  # [not win]
+    - export KAGGLE_USERNAME=datadinosaur  # [unix]
+    - export KAGGLE_KEY=xxxxxxxxxxxxxx  # [unix]
     - set KAGGLE_USERNAME=datadinosaur  # [win]
     - set KAGGLE_KEY=xxxxxxxxxxxxxx  # [win]
     - kaggle --help
