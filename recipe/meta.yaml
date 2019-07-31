@@ -1,5 +1,5 @@
 {% set name = "kaggle" %}
-{% set version = "1.5.4" %}
+{% set version = "1.5.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1e0460b6557ca653a4652401de4480513f2f3ffaa280555b8e9c266c1c0a5928
+  sha256: f7ea62a5c41e6dcdc481c5a7a4a2ca6091d10415605473ddb15962a48b74bc43
 
 build:
   number: 0
