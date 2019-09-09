@@ -10,7 +10,7 @@ source:
   sha256: f7ea62a5c41e6dcdc481c5a7a4a2ca6091d10415605473ddb15962a48b74bc43
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - kaggle = kaggle.cli:main
   script: "{{ PYTHON }} -m pip install . -vv"
