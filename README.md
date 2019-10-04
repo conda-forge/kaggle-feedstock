@@ -24,8 +24,7 @@ Current build status
         <img alt="macOS" src="https://img.shields.io/travis/conda-forge/kaggle-feedstock/master.svg?label=macOS">
       </a>
     </td>
-  </tr>
-    
+  </tr>   
   <tr>
     <td>Azure</td>
     <td>
