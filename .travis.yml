@@ -3,25 +3,26 @@
 
 language: generic
 
-env:
-  global:
-    # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
-    - secure: "ot06b3zxSATcqkjGUKi1ITEx7XkcbJp/dLngwER6s5XXASwEIKErUdN21uU1nyjzAQpHy3+XRijyP+sccbfvchrNYrBZWzqL/gFD32qOkZ40HgCD08iVEtCZTtf1ek5Kc/dsDLu5+F2vDe6nZJ/PVWt9vg7VHt3JyTJFjOM/hbpWZHQ3ED3zfzWMO4cj5Y/+v4ibAgQaKb7g0DEK8QloDXnyLk+3UcHXN1favDKKm1OccWBPtjj8X+2vhm+3bgWr3F6kInvaZ+Kg5N3FFYZAUitNDVe5K4uOxPH7kAgW6uj2AYUjT3fvBCh8NfpiP23ty9yZGObU7ZeBtvwcjoxXATvyA1ekMtBmfR0GJtNSmB7VftgB9sRxSTM2ikcMr6np3z09gIQSGtkyQzLIhIplC3mUFdt8NifuNgvu1oL7JDKf2xvISqzUaIVjmhahGrEGlIkdRVZUjpsAyyV366XrHrFEzPfn+LBhhkIxnkU29lYyr6yjfs8bPALDubsxYdPfX8RAQKqHgALVTgPvSMM68NLo9A6QC1K0PImGhkNkhRjakspWatGSuWpR1ixxx+hvFRRVjI0fOxRDKPZbyS637o275ioV+wG/LQqemlWOuT0N3TSRaI8iNosp7+03B4AX9JCmDLMnlneTo2zxha34eqpOwyiqIJ9v+izqzKnihts="
+
 
 matrix:
   include:
-    - env: CONFIG=linux_ppc64le_python3.6 UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
-      os: linux-ppc64le
+    - env: CONFIG=linux_ppc64le_python3.6.____cpython UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
+      os: linux
+      arch: ppc64le
 
-    - env: CONFIG=linux_ppc64le_python3.7 UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
-      os: linux-ppc64le
+    - env: CONFIG=linux_ppc64le_python3.7.____cpython UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
+      os: linux
+      arch: ppc64le
 
-    - env: CONFIG=linux_ppc64le_python3.8 UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
-      os: linux-ppc64le
+    - env: CONFIG=linux_ppc64le_python3.8.____cpython UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
+      os: linux
+      arch: ppc64le
 
 script:
   - export CI=travis
   - export GIT_BRANCH="$TRAVIS_BRANCH"
+  - export FEEDSTOCK_NAME=$(basename ${TRAVIS_REPO_SLUG})
 
 
   - if [[ ${PLATFORM} =~ .*linux.* ]]; then ./.scripts/run_docker_build.sh; fi
