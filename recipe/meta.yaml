@@ -10,25 +10,26 @@ source:
   sha256: b4d87d107bff743aaa805c2b382c3661c4c175cdb159656d4972be2a9cef42cb
 
 build:
-  number: 1
+  number: 3
+  noarch: python
   entry_points:
     - kaggle = kaggle.cli:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - certifi
     - python-dateutil
     - python-slugify
     - requests
     - six >=1.10
     - tqdm
-    - urllib3 >=1.21.1,<1.25
-
+    - urllib3
+    
 test:
   commands:
     - export KAGGLE_USERNAME=datadinosaur  # [unix]
