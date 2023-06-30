@@ -29,6 +29,7 @@ requirements:
     - six >=1.10
     - tqdm
     - urllib3
+    - bleach
 
 test:
   commands:
