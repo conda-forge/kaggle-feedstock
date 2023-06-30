@@ -1,5 +1,5 @@
 {% set name = "kaggle" %}
-{% set version = "1.5.13" %}
+{% set version = "1.5.14" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8364c56c36125cb8195876d911d0bc9efbc173167e963b9e9ef793789ba9a7fe
+  sha256: 7a2f25a4fbe9802834d6b79c2845977eadd0db0d80cdb7db0382e34626272c25
 
 build:
   number: 0
@@ -29,6 +29,7 @@ requirements:
     - six >=1.10
     - tqdm
     - urllib3
+    - bleach
 
 test:
   commands:
