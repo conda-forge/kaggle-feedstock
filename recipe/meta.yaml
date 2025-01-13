@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 439a7dea1d5039f320fd6ad5ec21b688dcfa70d405cb42095b81f41edc401b81
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - kaggle = kaggle.cli:main
@@ -18,10 +18,10 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - certifi
     - python-dateutil
     - python-slugify
@@ -32,6 +32,8 @@ requirements:
     - bleach
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - export KAGGLE_USERNAME=datadinosaur  # [unix]
     - export KAGGLE_KEY=xxxxxxxxxxxxxx  # [unix]
