@@ -152,5 +152,5 @@ Feedstock Maintainers
 
 * [@CurtLH](https://github.com/CurtLH/)
 * [@ngam](https://github.com/ngam/)
-* [@synapticabors](https://github.com/synapticabors/)
+* [@synapticarbors](https://github.com/synapticarbors/)
 
