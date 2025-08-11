@@ -43,7 +43,7 @@ requirements:
     - protobuf
 
 tests:
-  - python
+  - python:
       imports:
         - kaggle
       pip_check: true

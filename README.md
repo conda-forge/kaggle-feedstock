@@ -16,7 +16,6 @@ Documentation: https://github.com/Kaggle/kaggle-api
 Official API for https://www.kaggle.com, accessible using a command
 line tool implemented in Python.
 
-
 Current build status
 ====================
 
@@ -153,4 +152,5 @@ Feedstock Maintainers
 
 * [@CurtLH](https://github.com/CurtLH/)
 * [@ngam](https://github.com/ngam/)
+* [@synapticabors](https://github.com/synapticabors/)
 
