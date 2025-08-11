@@ -43,15 +43,12 @@ requirements:
     - protobuf
 
 tests:
-  - python:
-      imports:
-        - kaggle
-      pip_check: true
-      python_version: ${{ python_min }}.*
   - requirements:
       run:
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
+        - pip
     script:
+      - pip check
       - if: unix
         then: 
         - export KAGGLE_USERNAME=datadinosaur
