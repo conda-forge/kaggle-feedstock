@@ -41,6 +41,8 @@ requirements:
     - mypy >=1.15.0
     - types-requests
     - types-tqdm
+    # not listed in pyproject.toml
+    - python-dateutil
 
 tests:
   - requirements:
