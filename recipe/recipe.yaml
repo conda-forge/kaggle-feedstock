@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: kaggle
-  version: 1.7.4.5
+  version: "1.8.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 1d9821bd6a6a1470741c76d26495a18475b5a7bfe0c80b19191254b2735d41dd
+  sha256: 97c356595f64d11af2849d200978fe4a90151e2cf7856b2163ecee54f5ec8660
 
 build:
   number: 0
@@ -50,13 +50,13 @@ tests:
     script:
       - pip check
       - if: unix
-        then: 
-        - export KAGGLE_USERNAME=datadinosaur
-        - export KAGGLE_KEY=xxxxxxxxxxxxxx
+        then:
+          - export KAGGLE_USERNAME=datadinosaur
+          - export KAGGLE_KEY=xxxxxxxxxxxxxx
       - if: win
-        then: 
-        - set KAGGLE_USERNAME=datadinosaur
-        - set KAGGLE_KEY=xxxxxxxxxxxxxx
+        then:
+          - set KAGGLE_USERNAME=datadinosaur
+          - set KAGGLE_KEY=xxxxxxxxxxxxxx
       - kaggle --help
 
 about:
