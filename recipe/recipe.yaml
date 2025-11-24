@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: kaggle
-  version: "1.8.0"
+  version: "1.8.2"
   python_min: "3.11"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 97c356595f64d11af2849d200978fe4a90151e2cf7856b2163ecee54f5ec8660
+  sha256: d3945c32ce6f81046592d14f6d233ee1aec92769682fce4b05b3409e086db5f7
 
 build:
   number: 0
