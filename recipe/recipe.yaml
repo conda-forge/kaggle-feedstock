@@ -29,19 +29,14 @@ requirements:
   run:
     - python >=${{ python_min }}
     - bleach
-    - kagglesdk >= 0.1.14,< 1.0
+    - kagglesdk >= 0.1.15,<1.0
     - python-slugify
     - requests
     - python-dateutil
-    - six >=1.10
     - tqdm
     - urllib3 >=1.15.1
     - packaging
     - protobuf
-    - black >=24.10.0
-    - mypy >=1.15.0
-    - types-requests
-    - types-tqdm
 
 tests:
   - requirements:
