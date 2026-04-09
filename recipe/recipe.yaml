@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: kaggle
-  version: "1.8.4"
+  version: "2.0.1"
   python_min: "3.11"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: d71137f98312581726047cadceb28992c53ef905fe38c6dd9d6d3bfc4e43c982
+  sha256: bf0977d35916b04b0f1d8391d82eb6500c84d02f8606f6f74f815f1154c24f16
 
 build:
   number: 0
@@ -29,7 +29,7 @@ requirements:
   run:
     - python >=${{ python_min }}
     - bleach
-    - kagglesdk >= 0.1.15,<1.0
+    - kagglesdk >=0.1.17,<1.0
     - python-slugify
     - requests
     - python-dateutil
