@@ -14,7 +14,7 @@ source:
   sha256: 492fbfc6d1df958aeaa8e415781996e62db5db734266acf9575eaf5626919fb4
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: python -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -29,7 +29,7 @@ requirements:
   run:
     - python >=${{ python_min }}
     - bleach
-    - kagglesdk >=0.1.21,<1.0
+    - kagglesdk >=0.1.23,<1.0
     - python-slugify
     - requests
     - python-dateutil
