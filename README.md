@@ -196,6 +196,7 @@ Feedstock Maintainers
 =====================
 
 * [@CurtLH](https://github.com/CurtLH/)
+* [@mgorny](https://github.com/mgorny/)
 * [@ngam](https://github.com/ngam/)
 * [@synapticarbors](https://github.com/synapticarbors/)
 
