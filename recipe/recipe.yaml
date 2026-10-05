@@ -1,22 +1,20 @@
 schema_version: 1
 
 context:
-  name: kaggle
-  version: "2.2.3"
-  python_min: '3.11'
+  version: 2.2.4
 
 package:
-  name: ${{ name|lower }}
+  name: kaggle
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: ce292c459a13950553d894ee7368d6454be53291bd75c2d27ad2bed149cdd6c4
+  url: https://pypi.org/packages/source/k/kaggle/kaggle-${{ version }}.tar.gz
+  sha256: 28a58f6c1b9f46ce2afdfb439e0c4e91219e818b377ea4254f4e479456d8cb78
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install . -vv --no-deps --no-build-isolation
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
     entry_points:
       - kaggle = kaggle.cli:main
@@ -29,7 +27,7 @@ requirements:
   run:
     - python >=${{ python_min }}
     - bleach
-    - kagglesdk >=0.1.30,<1.0
+    - kagglesdk >=0.1.35,<1.0
     - python-slugify
     - requests
     - python-dateutil
@@ -39,22 +37,28 @@ requirements:
     - protobuf
     - jupytext
     - python-dotenv
+
 tests:
+  - python:
+      imports:
+        - kaggle
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
-        - python ${{ python_min }}.*
-        - pip
+        - pytest
+    files:
+      source:
+        - tests/
     script:
-      - pip check
-      - if: unix
-        then:
-          - export KAGGLE_USERNAME=datadinosaur
-          - export KAGGLE_KEY=xxxxxxxxxxxxxx
-      - if: win
-        then:
-          - set KAGGLE_USERNAME=datadinosaur
-          - set KAGGLE_KEY=xxxxxxxxxxxxxx
-      - kaggle --help
+      env:
+        KAGGLE_USERNAME: datadinosaur
+        KAGGLE_KEY: xxxxxxxxxxxxxx
+      content:
+        - kaggle --help
+        - pytest tests/integration tests/unit
 
 about:
   license: Apache-2.0
@@ -72,3 +76,4 @@ extra:
     - ngam
     - CurtLH
     - synapticarbors
+    - mgorny
